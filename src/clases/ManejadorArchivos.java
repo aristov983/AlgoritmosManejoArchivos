@@ -19,6 +19,8 @@ public class ManejadorArchivos {
                 System.out.print(lineaActual+" ");
                 lineaActual = br.readLine();
             } 
+            br.close();
+            fr.close();
         }catch (FileNotFoundException e){
             System.out.println("Error al leer el archivo: "+nombreArchivo);
             e.printStackTrace();
