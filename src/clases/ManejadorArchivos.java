@@ -132,5 +132,30 @@ public class ManejadorArchivos {
         }
     }
 
+    public void leerArchivoDeterminadaLongitud(String nombreArchivo, int longitud){
+        FileReader fr;
+        try{
+            fr = new FileReader(nombreArchivo);
+            BufferedReader br = new BufferedReader(fr);
+            String lineaActual = br.readLine();
+            while (lineaActual != null){
+                if (lineaActual.length() > longitud){
+                    System.out.print(lineaActual+" ");
+                }
+                lineaActual = br.readLine();
+            } 
+            br.close();
+            fr.close();
+        }catch (FileNotFoundException e){
+            System.out.println("Error al leer el archivo: "+nombreArchivo);
+            e.printStackTrace();
+        }catch (IOException e){
+            System.out.println("Error al leer el archivo: "+nombreArchivo);
+            e.printStackTrace();
+        }
+        System.out.println();
+        System.out.println("Archivo leido satisfacoriamente.");    
+    }
+
     public ManejadorArchivos(){}
 }

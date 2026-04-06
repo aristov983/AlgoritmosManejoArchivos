@@ -36,6 +36,9 @@ public class App {
                 case 7:
                     ejercicio7();
                     break;
+                case 8:
+                    ejercicio8();
+                    break;
                 default:
                     System.out.print("El ejercicio no se encuentra disponible.");
             }
@@ -103,5 +106,10 @@ public class App {
     public static void ejercicio7(){
         ManejadorArchivos manejadorArchivos = new ManejadorArchivos();
         manejadorArchivos.copiarArchivo("src/archivos/frutas.txt", "src/archivos/frutas_copia.txt");
+    }
+
+    public static void ejercicio8(){
+        ManejadorArchivos ma = new ManejadorArchivos();
+        ma.leerArchivoDeterminadaLongitud("src/archivos/ejercicio5.txt", 22);
     }
 }
