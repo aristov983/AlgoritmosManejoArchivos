@@ -157,5 +157,28 @@ public class ManejadorArchivos {
         System.out.println("Archivo leido satisfacoriamente.");    
     }
 
+    public void ejercicioNotas(String nombreArchivo){
+        int suma = 0;
+        int cantidad = 0;
+        FileReader fr;
+        try {
+            fr = new FileReader(nombreArchivo);
+            BufferedReader br = new BufferedReader(fr);
+            String notaActual = br.readLine();
+            while (notaActual!=null){
+                cantidad += 1;
+                suma += Integer.parseInt(notaActual);
+                notaActual = br.readLine();
+            }
+            int promedio = suma/cantidad;
+            System.out.println("El promedio de las "+cantidad+" notas es igual a "+promedio);
+            br.close();
+            fr.close();
+        } catch (Exception e) {
+            System.out.println("Error al leer el archivo: "+nombreArchivo);
+            e.printStackTrace();
+        }
+    }
+
     public ManejadorArchivos(){}
 }

@@ -39,6 +39,12 @@ public class App {
                 case 8:
                     ejercicio8();
                     break;
+                case 9:
+                    ejercicio9();
+                    break;
+                case 10:
+                    ejercicio10();
+                    break;
                 default:
                     System.out.print("El ejercicio no se encuentra disponible.");
             }
@@ -112,4 +118,18 @@ public class App {
         ManejadorArchivos ma = new ManejadorArchivos();
         ma.leerArchivoDeterminadaLongitud("src/archivos/ejercicio5.txt", 22);
     }
+
+    public static void ejercicio9(){
+        ManejadorArchivos ma = new ManejadorArchivos();
+        String[] lineasEscribir={"Ejercicio 9", "No se mucho que poner", "Liberaciooooon"};
+        ma.escribirArchivo("src/archivos/ejercicio9.txt", lineasEscribir);
+        ma.leerArchivo("src/archivos/ejercicio9.txt");
+    }
+
+    public static void ejercicio10(){
+        ManejadorArchivos ma = new ManejadorArchivos();
+        ma.ejercicioNotas("src/archivos/notas.txt");
+    }
+
+    
 }
